@@ -6,12 +6,12 @@
 /*   By: mjabarin <mjabarin@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 13:58:25 by mjabarin          #+#    #+#             */
-/*   Updated: 2025/12/03 12:50:24 by mjabarin         ###   ########.fr       */
+/*   Updated: 2025/12/13 14:15:28 by mjabarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*get_word(char *s, char c)
+char	*get_word(const char *s, char c)
 {
 	char	*word;
 	int		i;
@@ -32,7 +32,7 @@ char	*get_word(char *s, char c)
 	return (word);
 }
 
-int	count_words(char *s, char c)
+int	count_words(const char *s, char c)
 {
 	int	count;
 	int	i;
@@ -48,7 +48,7 @@ int	count_words(char *s, char c)
 	return (count);
 }
 
-char	**ft_split(char *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	int		i;

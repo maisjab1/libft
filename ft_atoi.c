@@ -6,12 +6,12 @@
 /*   By: mjabarin <mjabarin@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 13:32:06 by mjabarin          #+#    #+#             */
-/*   Updated: 2025/12/11 16:26:23 by mjabarin         ###   ########.fr       */
+/*   Updated: 2025/12/12 15:37:01 by mjabarin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int	sign;
 	int	num;
@@ -20,20 +20,20 @@ int	ft_atoi(const char *str)
 	sign = 1;
 	num = 0;
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-		|| str[i] == '\n' || str[i] == '\r'
-		|| str[i] == '\v' || str[i] == '\f')
+	while (nptr[i] == ' ' || nptr[i] == '\n' || nptr[i] == '\t'
+		|| nptr[i] == '\n' || nptr[i] == '\r'
+		|| nptr[i] == '\v' || nptr[i] == '\f')
 		i++;
-	if (str[i] == '+')
+	if (nptr[i] == '+')
 		i++;
-	else if (str[i] == '-')
+	else if (nptr[i] == '-')
 	{
 		sign *= -1;
 		i++;
 	}
-	while (ft_isdigit(str[i]))
+	while (ft_isdigit(nptr[i]))
 	{
-		num = (num * 10) + (str[i] - '0');
+		num = (num * 10) + (nptr[i] - '0');
 		i++;
 	}
 	return (num * sign);
